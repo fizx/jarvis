@@ -12,5 +12,7 @@ go:
 git:
   depth: 1
 
+  before_install:
+  - sudo apt-get -y install thrift-compiler
 script:
   - make test
