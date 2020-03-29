@@ -1,4 +1,4 @@
-namespace go reddit.{{project}}
+namespace go {{owner}}.{{project}}
 
 include "baseplate.thrift"
 
