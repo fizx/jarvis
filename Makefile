@@ -1,9 +1,17 @@
 NOW = $(shell date +%s)
+THRIFT_CMD=thrift
+THRIFT_GO_BASE_CMD=$(THRIFT_CMD) -out generated/thrift/ --gen go:thrift_import=github.com/apache/thrift/lib/go/thrift,package_prefix=github.com/fizx/jarvis/generated/thrift/
 
-default:
+default: thrift
 	mkdir -p generated/assets
 	go generate .
 	go build .
+	go build ./pkg/jarvis
+
+thrift:
+	mkdir -p generated/thrift
+	$(THRIFT_GO_BASE_CMD) idl/baseplate.thrift
+
 	
 test: default
 	rm -rf iron_man

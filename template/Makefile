@@ -31,5 +31,4 @@ run:
 thrift:
 	mkdir -p thrift
 	curl -o idl/baseplate.thrift https://raw.githubusercontent.com/reddit/baseplate.py/master/baseplate/thrift/baseplate.thrift
-	$(THRIFT_GO_BASE_CMD) idl/baseplate.thrift
 	$(THRIFT_GO_BASE_CMD) idl/{{project}}.thrift

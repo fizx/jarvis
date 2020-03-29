@@ -10,6 +10,7 @@ import (
 
 	"github.com/apache/thrift/lib/go/thrift"
 	"github.com/fizx/baseplate.go/thriftbp"
+	"github.com/fizx/jarvis/generated/thrift/reddit/baseplate"
 	"github.com/getsentry/raven-go"
 	"github.com/reddit/baseplate.go/edgecontext"
 	"github.com/reddit/baseplate.go/log"
@@ -52,7 +53,7 @@ type config struct {
 	}
 }
 
-func StartBaseplateThrift(processor thrift.TProcessor) {
+func StartBaseplateThrift(processor *baseplate.BaseplateServiceProcessor) {
 	prev, current := runtimebp.GOMAXPROCS(1, 50)
 	fmt.Println("GOMAXPROCS:", prev, current)
 	flag.Parse()
@@ -94,8 +95,10 @@ func StartBaseplateThrift(processor thrift.TProcessor) {
 		log.Fatal(err)
 	}
 
+	withMiddleware := ApplyMiddleware(processor)
+
 	server := thrift.NewTSimpleServer4(
-		processor,
+		withMiddleware,
 		transport,
 		thrift.NewTHeaderTransportFactory(nil),
 		thrift.NewTHeaderProtocolFactory(),
