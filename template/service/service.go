@@ -14,7 +14,6 @@ func (svc {{class}}ServiceImpl) Echo(ctx context.Context, request *gen.EchoReque
 	return &gen.EchoResponse{Content: request.Content}, nil
 }
 
-
 func (svc {{class}}ServiceImpl) IsHealthy(ctx context.Context) (r bool, err error) {
 	return true, nil
 }
