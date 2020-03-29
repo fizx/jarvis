@@ -4,8 +4,10 @@ import (
 	"bytes"
 	"io"
 	"log"
+	"net/url"
 	"os"
 	"path"
+	"strings"
 
 	"github.com/iancoleman/strcase"
 
@@ -34,9 +36,22 @@ func main() {
 		log.Fatalln("Jarvis expects a project name as the sole argument!")
 	}
 	data := map[string]string{}
-	name := os.Args[1]
+	u, err := url.Parse(os.Args[1])
+	if err != nil {
+		u, err = url.Parse("https://" + os.Args[1])
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	segments := strings.Split(u.EscapedPath(), "/")
+	name := segments[len(segments)-1]
+	owner := segments[len(segments)-2]
 	root := strcase.ToSnake(name)
+	data["owner"] = owner
 	data["project"] = root
+	data["class"] = strcase.ToCamel(name)
+	data["package"] = u.Hostname() + u.EscapedPath()
 	fs := assets.Assets
 	walkFn := func(templatePath string, fi os.FileInfo, r io.ReadSeeker, err error) error {
 		realPath := apply(templatePath, data)
@@ -48,7 +63,7 @@ func main() {
 			buf.ReadFrom(r)
 			s := buf.String()
 			contents := apply(s, data)
-			f, err := os.OpenFile(localPath, os.O_RDWR|os.O_CREATE, fi.Mode())
+			f, err := os.OpenFile(localPath, os.O_RDWR|os.O_CREATE, 0644)
 			if err != nil {
 				log.Fatal(err)
 				return err
@@ -65,12 +80,12 @@ func main() {
 			}
 		case true:
 			localPath := path.Join(root, realPath)
-			os.MkdirAll(localPath, fi.Mode())
+			os.MkdirAll(localPath, 0755)
 			return nil
 		}
 		return nil
 	}
-	err := vfsutil.WalkFiles(fs, "/", walkFn)
+	err = vfsutil.WalkFiles(fs, "/", walkFn)
 	if err != nil {
 		log.Fatalln(err)
 	}

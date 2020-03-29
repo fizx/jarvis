@@ -19,17 +19,19 @@ var Assets = func() http.FileSystem {
 	fs := vfsgen۰FS{
 		"/": &vfsgen۰DirInfo{
 			name:    "/",
-			modTime: time.Date(2020, 3, 29, 4, 6, 49, 847825719, time.UTC),
+			modTime: time.Date(2020, 3, 29, 17, 58, 26, 586348556, time.UTC),
 		},
 		"/.gitignore": &vfsgen۰FileInfo{
 			name:    ".gitignore",
 			modTime: time.Date(2020, 3, 29, 4, 6, 8, 223898499, time.UTC),
 			content: []byte("\x7b\x7b\x70\x72\x6f\x6a\x65\x63\x74\x7d\x7d"),
 		},
-		"/Makefile": &vfsgen۰FileInfo{
-			name:    "Makefile",
-			modTime: time.Date(2020, 3, 29, 4, 13, 4, 780280840, time.UTC),
-			content: []byte("\x4e\x4f\x57\x20\x3d\x20\x24\x28\x73\x68\x65\x6c\x6c\x20\x64\x61\x74\x65\x20\x2b\x25\x73\x29\x0a\x0a\x64\x65\x66\x61\x75\x6c\x74\x3a\x0a\x09\x67\x6f\x20\x62\x75\x69\x6c\x64\x20\x2e\x2f\x2e\x2e\x2e\x0a\x09\x0a\x74\x65\x73\x74\x3a\x20\x64\x65\x66\x61\x75\x6c\x74\x0a\x09\x67\x6f\x20\x74\x65\x73\x74\x20\x2e\x2f\x2e\x2e\x2e\x0a\x09\x0a\x63\x6c\x65\x61\x6e\x3a\x0a\x09\x72\x6d\x20\x2d\x66\x20\x7b\x7b\x70\x72\x6f\x6a\x65\x63\x74\x7d\x7d"),
+		"/Makefile": &vfsgen۰CompressedFileInfo{
+			name:             "Makefile",
+			modTime:          time.Date(2020, 3, 29, 18, 16, 10, 16491510, time.UTC),
+			uncompressedSize: 800,
+
+			compressedContent: []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x7c\x52\xcb\x6e\xdb\x30\x10\x3c\x9b\x5f\xb1\x07\x17\xb0\xd0\x92\xbc\x0b\xd0\xa1\x69\x52\x27\x40\x6b\x15\x8e\x8d\xa2\x27\x83\x12\x57\x14\x1b\x89\x24\x28\xca\x69\x20\xe8\xdf\x0b\xbd\x62\x37\x2d\x7a\x11\xc0\xd9\xd9\xdd\x99\x1d\xed\xd2\xef\x90\xc0\x7a\xd3\x94\x58\x55\x20\x45\x40\x78\xff\xae\x89\x08\xd9\xa6\x9f\xbe\xde\x26\xca\x92\x6d\x7a\x73\x7c\xf8\x72\x9b\xac\x37\x23\x14\x41\xd6\xea\x4a\x02\xad\xad\x84\x33\x1a\x69\x3d\xd9\xa6\x87\xbb\xc7\xc3\x85\x11\xb0\x09\x6f\x08\xfb\xe3\xee\x52\xf7\xad\x81\x5a\x68\xc3\x94\x25\x87\xfb\xfd\xc3\xe7\xc3\x69\x58\x16\x4a\xaf\x8b\xb0\x20\xdb\xf4\x74\xf3\xf1\xf1\x6e\xac\xac\x37\x17\x5a\x04\xd4\xb6\x01\x26\x32\x07\x4a\x15\x1a\x50\x36\x9e\x80\x93\xae\x9d\xf5\x21\x51\x3a\x94\x6d\xc6\x72\x5b\x73\xe1\x44\x5e\x22\x9f\x1b\x2a\x9d\x71\x65\xe7\xd7\x07\x27\xf2\x27\xa1\xf0\xe4\x3c\x16\xfa\x57\xd2\x75\x33\xd0\xf7\x0b\x9f\x10\xc2\xbe\xdd\xa7\xbb\x1f\xf1\x6c\x7c\xfc\x52\xe7\xad\x9c\x7c\x0e\x66\x66\xe5\x84\x8c\xc5\x78\x79\xaf\x94\x85\xab\x2b\xac\x86\x03\x8c\xc7\x8c\x80\x71\xc6\x18\x21\x79\x85\xc2\xc4\x64\xe5\x6b\xa0\x05\x74\x9d\xf3\xf6\x27\xe6\xa1\xef\x27\xc8\x17\x8b\xcf\xae\xb3\xcf\x06\x7d\xdf\xcf\x3b\x46\x01\xf1\x1f\x23\x69\xf0\xba\x76\x22\x94\x40\x2d\xf0\x91\xc5\x1b\xf4\x67\x9d\x23\x30\x42\x06\xb1\xb3\x87\xa9\x6d\xc8\xec\x55\x88\x6f\xcd\x3c\x6d\x7f\xdc\x45\x40\x25\x66\xad\x02\x9a\x5b\x53\x68\x05\x12\xcf\xec\x45\xd4\x15\x21\x93\x9c\x98\xac\xea\x27\xa9\x3d\x50\xf7\xea\x35\x6f\x7d\x35\x6c\xd6\xb2\xe2\x99\x68\xd0\x55\x22\x20\x9b\xaa\x50\x86\xe0\x9a\x98\x73\x2f\x9e\xd9\x14\x4d\xdb\xa0\xcf\xad\x09\x68\xc2\x98\x92\x47\x29\x75\xb8\xea\x74\x2f\xbc\x16\x4d\x40\x7f\xc1\x96\x4c\xde\x8e\x1f\x84\xff\xfd\xd7\x44\xff\x94\xf2\x3f\xee\xd5\xfd\x17\xf6\xef\x00\x00\x00\xff\xff\x6a\x70\x9e\x18\x20\x03\x00\x00"),
 		},
 		"/cmd": &vfsgen۰DirInfo{
 			name:    "cmd",
@@ -49,11 +51,29 @@ var Assets = func() http.FileSystem {
 			modTime: time.Date(2020, 3, 29, 5, 13, 26, 471000000, time.UTC),
 			content: []byte("\x70\x61\x63\x6b\x61\x67\x65\x20\x6d\x61\x69\x6e\x0a\x0a\x69\x6d\x70\x6f\x72\x74\x20\x22\x74\x65\x73\x74\x69\x6e\x67\x22\x0a\x0a\x66\x75\x6e\x63\x20\x54\x65\x73\x74\x53\x75\x6d\x28\x74\x20\x2a\x74\x65\x73\x74\x69\x6e\x67\x2e\x54\x29\x20\x7b\x0a\x09\x74\x2e\x4c\x6f\x67\x28\x22\x59\x61\x79\x21\x22\x29\x0a\x7d\x0a"),
 		},
+		"/go.mod": &vfsgen۰FileInfo{
+			name:    "go.mod",
+			modTime: time.Date(2020, 3, 29, 18, 10, 11, 258076500, time.UTC),
+			content: []byte("\x6d\x6f\x64\x75\x6c\x65\x20\x7b\x7b\x70\x61\x63\x6b\x61\x67\x65\x7d\x7d\x0a\x0a\x67\x6f\x20\x31\x2e\x31\x34\x0a"),
+		},
+		"/idl": &vfsgen۰DirInfo{
+			name:    "idl",
+			modTime: time.Date(2020, 3, 29, 5, 22, 49, 442342081, time.UTC),
+		},
+		"/idl/{{project}}.thrift": &vfsgen۰CompressedFileInfo{
+			name:             "{{project}}.thrift",
+			modTime:          time.Date(2020, 3, 29, 5, 25, 22, 42456719, time.UTC),
+			uncompressedSize: 288,
+
+			compressedContent: []byte("\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x74\x8e\xcd\x4a\x03\x41\x10\x84\xef\xfd\x14\x45\x4e\x09\x48\xc0\xab\xb9\x09\xbe\x80\x3e\xc1\xd8\x5b\x66\x47\xd6\x99\xb5\xbb\x57\x85\x61\xde\x5d\x58\x5d\xfc\x81\x9c\xba\xa9\xfa\xa0\xbe\x92\x5e\xe8\x73\x52\xe2\x5c\x61\x1c\x86\x1c\xc7\xd6\x66\xab\xcf\xd4\xe8\x5d\x24\x17\x9d\x96\x81\xd8\x3d\x26\xe7\x3c\xa5\xe0\x31\x46\xcb\x4f\xb1\x13\xf1\xb0\x45\x03\x77\x3a\xd6\x7b\xbe\x2e\xf4\x40\x83\x00\xd7\x37\xf0\xb0\x5c\xce\xd0\x5a\x82\x25\x4e\xd2\xf1\x0f\xf7\xb9\x16\xe7\x65\x5e\xc4\x69\x6f\x59\x89\xd6\x74\x4a\xee\xbd\x3f\x7c\x07\xfc\x08\x96\xc1\xf1\x63\x74\xbb\x7d\x1b\xd2\x04\xc0\xdf\x25\xea\x58\xf7\x6b\xbc\x0e\xfe\x96\xb6\xaf\x7b\xb5\xb6\x07\xc4\x68\xf5\xdd\xb1\x3f\x9c\xa4\x7f\x06\x00\x00\xff\xff\x1d\x9e\xd9\x24\x20\x01\x00\x00"),
+		},
 	}
 	fs["/"].(*vfsgen۰DirInfo).entries = []os.FileInfo{
 		fs["/.gitignore"].(os.FileInfo),
 		fs["/Makefile"].(os.FileInfo),
 		fs["/cmd"].(os.FileInfo),
+		fs["/go.mod"].(os.FileInfo),
+		fs["/idl"].(os.FileInfo),
 	}
 	fs["/cmd"].(*vfsgen۰DirInfo).entries = []os.FileInfo{
 		fs["/cmd/{{project}}"].(os.FileInfo),
@@ -61,6 +81,9 @@ var Assets = func() http.FileSystem {
 	fs["/cmd/{{project}}"].(*vfsgen۰DirInfo).entries = []os.FileInfo{
 		fs["/cmd/{{project}}/main.go"].(os.FileInfo),
 		fs["/cmd/{{project}}/main_test.go"].(os.FileInfo),
+	}
+	fs["/idl"].(*vfsgen۰DirInfo).entries = []os.FileInfo{
+		fs["/idl/{{project}}.thrift"].(os.FileInfo),
 	}
 
 	return fs
@@ -76,6 +99,16 @@ func (fs vfsgen۰FS) Open(path string) (http.File, error) {
 	}
 
 	switch f := f.(type) {
+	case *vfsgen۰CompressedFileInfo:
+		gr, err := gzip.NewReader(bytes.NewReader(f.compressedContent))
+		if err != nil {
+			// This should never happen because we generate the gzip bytes such that they are always valid.
+			panic("unexpected error reading own gzip compressed bytes: " + err.Error())
+		}
+		return &vfsgen۰CompressedFile{
+			vfsgen۰CompressedFileInfo: f,
+			gr:                        gr,
+		}, nil
 	case *vfsgen۰FileInfo:
 		return &vfsgen۰File{
 			vfsgen۰FileInfo: f,
@@ -91,9 +124,76 @@ func (fs vfsgen۰FS) Open(path string) (http.File, error) {
 	}
 }
 
-// We already imported "compress/gzip" and "io/ioutil", but ended up not using them. Avoid unused import error.
-var _ = gzip.Reader{}
-var _ = ioutil.Discard
+// vfsgen۰CompressedFileInfo is a static definition of a gzip compressed file.
+type vfsgen۰CompressedFileInfo struct {
+	name              string
+	modTime           time.Time
+	compressedContent []byte
+	uncompressedSize  int64
+}
+
+func (f *vfsgen۰CompressedFileInfo) Readdir(count int) ([]os.FileInfo, error) {
+	return nil, fmt.Errorf("cannot Readdir from file %s", f.name)
+}
+func (f *vfsgen۰CompressedFileInfo) Stat() (os.FileInfo, error) { return f, nil }
+
+func (f *vfsgen۰CompressedFileInfo) GzipBytes() []byte {
+	return f.compressedContent
+}
+
+func (f *vfsgen۰CompressedFileInfo) Name() string       { return f.name }
+func (f *vfsgen۰CompressedFileInfo) Size() int64        { return f.uncompressedSize }
+func (f *vfsgen۰CompressedFileInfo) Mode() os.FileMode  { return 0444 }
+func (f *vfsgen۰CompressedFileInfo) ModTime() time.Time { return f.modTime }
+func (f *vfsgen۰CompressedFileInfo) IsDir() bool        { return false }
+func (f *vfsgen۰CompressedFileInfo) Sys() interface{}   { return nil }
+
+// vfsgen۰CompressedFile is an opened compressedFile instance.
+type vfsgen۰CompressedFile struct {
+	*vfsgen۰CompressedFileInfo
+	gr      *gzip.Reader
+	grPos   int64 // Actual gr uncompressed position.
+	seekPos int64 // Seek uncompressed position.
+}
+
+func (f *vfsgen۰CompressedFile) Read(p []byte) (n int, err error) {
+	if f.grPos > f.seekPos {
+		// Rewind to beginning.
+		err = f.gr.Reset(bytes.NewReader(f.compressedContent))
+		if err != nil {
+			return 0, err
+		}
+		f.grPos = 0
+	}
+	if f.grPos < f.seekPos {
+		// Fast-forward.
+		_, err = io.CopyN(ioutil.Discard, f.gr, f.seekPos-f.grPos)
+		if err != nil {
+			return 0, err
+		}
+		f.grPos = f.seekPos
+	}
+	n, err = f.gr.Read(p)
+	f.grPos += int64(n)
+	f.seekPos = f.grPos
+	return n, err
+}
+func (f *vfsgen۰CompressedFile) Seek(offset int64, whence int) (int64, error) {
+	switch whence {
+	case io.SeekStart:
+		f.seekPos = 0 + offset
+	case io.SeekCurrent:
+		f.seekPos += offset
+	case io.SeekEnd:
+		f.seekPos = f.uncompressedSize + offset
+	default:
+		panic(fmt.Errorf("invalid whence value: %v", whence))
+	}
+	return f.seekPos, nil
+}
+func (f *vfsgen۰CompressedFile) Close() error {
+	return f.gr.Close()
+}
 
 // vfsgen۰FileInfo is a static definition of an uncompressed file (because it's not worth gzip compressing).
 type vfsgen۰FileInfo struct {
