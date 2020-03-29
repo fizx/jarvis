@@ -6,9 +6,9 @@ default:
 	go build .
 	
 test: default
-	rm -rf iron-man
-	./jarvis create iron-man
-	cd iron-man && make test
+	rm -rf iron_man
+	./jarvis iron-man
+	cd iron_man && go mod init github.com/fizx/iron_man && make test
 
 clean:
 	rm -rf generated
