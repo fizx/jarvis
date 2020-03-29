@@ -13,7 +13,7 @@ THRIFT_GO_BASE_CMD=$(THRIFT_CMD) -out thrift/ --gen go:thrift_import=github.com/
 
 build: thrift
 	go mod vendor
-	$(GOBUILD) ./...
+	$(GOBUILD) ./cmd/{{project}}
 
 clean:
 	rm -f {{project}}
